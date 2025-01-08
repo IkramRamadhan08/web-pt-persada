@@ -692,7 +692,7 @@ form button:hover {
 
 .about {
     padding: 50px 0px 20px 80px;
-    background: url('pexels-gustavo-fring-4254161.png') no-repeat center center; /* Ganti dengan gambar background */
+    background: url('abouttop.png') no-repeat center center; /* Ganti dengan gambar background */
     background-size: cover; /* Sesuaikan gambar agar menutupi area header */
     color: #FFFFFF; /* Warna teks tetap putih */
     text-align: left; /* Rata kiri */
@@ -719,8 +719,7 @@ form button:hover {
  
 .about-section {
     width: 100%; /* Lebar 100% untuk responsivitas */
-    max-width: 1271px; /* Lebar maksimum 1271px */
-    height: 764px; /* Tinggi 764px */
+    height: 940px; /* Tinggi 764px */
     background: #ffffff; /* Latar belakang putih */
     padding-bottom: 100px; /* Padding bawah */
     background-size: cover; /* Jika ada gambar latar belakang */
@@ -789,8 +788,9 @@ form button:hover {
 }
 
 .image-desc-about img {
-    max-width: 100%; /* Memastikan gambar responsif */
-    border-radius: 30px; /* Sudut melengkung untuk gambar */
+    max-width: 700px; /* Memastikan gambar responsif */
+    max-height: 525px;
+    border-radius: 50px; /* Sudut melengkung untuk gambar */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Bayangan pada gambar */
 }
 
@@ -812,7 +812,7 @@ form button:hover {
 
 .border-kosong{
     padding: 12.5rem 6.25rem; /* Kurangi padding atas untuk menggeser konten ke atas */
-    background: url('pexels-gustavo-fring-4254161.png') no-repeat center center; /* Ganti dengan gambar background */
+    background: url('aboutsun.png') no-repeat center center; /* Ganti dengan gambar background */
     background-size: cover; /* Sesuaikan gambar agar menutupi area header */
     color: #FFFFFF; /* Warna teks tetap putih */
     text-align: left; /* Rata kiri */
@@ -830,24 +830,26 @@ form button:hover {
 
 .box {
   flex: 1 1 40%;
-  max-width: 40%;
+  max-width: 80%;
   padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   color: #333;
   position: relative;
   z-index: 1;
 }
 
 .vision {
-border-top-left-radius: 15px;
-border-bottom-left-radius: 15px;
+border-top-left-radius: 50px;
+border-bottom-left-radius: 50px;
 background-color: #f5f5f5;
+text-align: center;
 }
 
 .mission {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #007bff;
+  text-align: center;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #284C70;
   color: #fff;
 }
 
@@ -1151,10 +1153,11 @@ background-color: #f5f5f5;
     font-size: 1.2em;
     margin-bottom: 5px; /* Jarak dengan paragraf deskripsi */
     color: #000;
+    text-align: center;
 }
 
 .content-paragraph p {
-    text-align: left;
+    text-align: center;
     font-size: 1em;
     margin-top: 0; /* Menghilangkan jarak atas */
     color: #555;

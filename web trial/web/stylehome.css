@@ -142,21 +142,36 @@ a {
 
 /* Header Styles */
 header {
-    padding: 12.5rem 6.25rem; /* Kurangi padding atas untuk menggeser konten ke atas */
-    background: url('pexels-gustavo-fring-4254161.png') no-repeat center center; /* Ganti dengan gambar background */
-    background-size: cover; /* Sesuaikan gambar agar menutupi area header */
-    color: #FFFFFF; /* Warna teks tetap putih */
+    position: relative;
+    padding: 12.5rem 6.25rem; /* Tetap mempertahankan padding */
+    color: #FFFFFF; /* Warna teks putih */
     text-align: left; /* Rata kiri */
+    display: flex;
+    align-items: flex-start; /* Teks lebih ke atas */
+    justify-content: flex-start;
+    height: 100vh; /* Menyesuaikan tinggi header */
+    overflow: hidden;
 }
 
-.header-content {
-    max-width: 50rem; /* Batasi lebar konten agar lebih teratur */
-    margin: 0;
-    padding: 0;
-    position: relative; /* Tetapkan posisi relatif untuk memungkinkan pemindahan */
-    top: -3.125rem; /* Geser teks ke atas */
-    padding-left: 1.875rem; /* Tambahkan padding kiri untuk menggeser teks ke kanan */
+/* Gaya untuk gambar latar belakang */
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    z-index: -1; /* Menjadikan gambar berada di belakang konten */
 }
+
+/* Gaya untuk konten dalam header */
+.header-content {
+    position: relative;
+    z-index: 1; /* Pastikan teks di atas gambar */
+    max-width: 600px; /* Batasi lebar teks agar lebih terbaca */
+    max-height: fit-content;
+}
+
 
 .header-content h1 {
     font-size: 3.5rem; /* Ukuran teks sesuai gambar */
@@ -177,50 +192,7 @@ header {
     margin-left: 0.625rem; /* Geser sedikit ke kanan */
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .top-bar {
-        padding: 1rem 1.5rem; /* Mengurangi padding untuk layar kecil */
-    }
 
-    .header-content {
-        padding-left: 1rem; /* Sesuaikan padding */
-        top: -2rem; /* Sesuaikan posisi */
-    }
-
-    .header-content h1 {
-        font-size: 2.5rem; /* Ukuran teks lebih kecil di perangkat mobile */
-    }
-
-    .header-content p {
-        font-size: 1rem; /* Ukuran teks paragraf lebih kecil */
-        max-width: 100%; /* Lebar paragraf penuh */
-    }
-}
-
-@media (max-width: 480px) {
-    .top-bar {
-        flex-direction: column; /* Susun vertikal di layar kecil */
-        align-items: flex-start; /* Rata kiri */
-    }
-
-    .top-bar nav ul {
-        flex-direction: column; /* Menu dalam kolom */
-        gap: 0.5rem; /* Jarak antar menu */
-    }
-
-    .header-content {
-        padding-left: 0.5rem; /* Sesuaikan padding */
-    }
-
-    .header-content h1 {
-        font-size: 2rem; /* Ukuran teks lebih kecil di perangkat mobile */
-    }
-
-    .header-content p {
-        font-size: 0.875rem; /* Ukuran teks paragraf lebih kecil */
-    }
-}
 /* Border profile perusahaan */
 .border-pc {
     padding: 100px 50px; /* Sesuaikan padding */
@@ -490,6 +462,36 @@ form button:hover {
     margin: 0 auto; /* Menyelaraskan kontainer ke tengah */
 }
 
+/* Fitur */
+.features {
+    display: flex; /* Menampilkan fitur dalam satu baris */
+    justify-content: center; /* Pusatkan secara horizontal */
+    gap: 50px; /* Jarak antar fitur */
+}
+
+.feature {
+    text-align: center; /* Teks rata tengah */
+    max-width: 300px; /* Lebar maksimum fitur */
+}
+
+.feature img {
+    margin-top: 50px; /* Jarak atas gambar fitur */
+    width: 80px; /* Lebar gambar fitur */
+    height: 80px; /* Tinggi gambar fitur */
+    margin-bottom: 15px; /* Jarak bawah gambar fitur */
+}
+
+
+.feature h3 {
+    font-size: 20px; /* Ukuran font judul fitur */
+    color: #000; /* Warna teks judul fitur */
+}
+
+.feature p {
+    font-size: 16px; /* Ukuran font deskripsi fitur */
+    color: #bbb; /* Warna teks deskripsi fitur */
+}
+
 /* Responsiveness */
 @media (max-width: 1270px) {
     .icons {
@@ -633,35 +635,6 @@ form button:hover {
 .next-btn:hover {
     background-color: #007bff; /* Warna latar belakang saat hover */
     color: #fff; /* Warna teks saat hover */
-}
-
-/* Fitur */
-.features {
-    display: flex; /* Menampilkan fitur dalam satu baris */
-    justify-content: center; /* Pusatkan secara horizontal */
-    gap: 50px; /* Jarak antar fitur */
-}
-
-.feature {
-    text-align: center; /* Teks rata tengah */
-    max-width: 300px; /* Lebar maksimum fitur */
-}
-
-.feature img {
-    margin-top: 50px; /* Jarak atas gambar fitur */
-    width: 80px; /* Lebar gambar fitur */
-    height: 80px; /* Tinggi gambar fitur */
-    margin-bottom: 15px; /* Jarak bawah gambar fitur */
-}
-
-.feature h3 {
-    font-size: 20px; /* Ukuran font judul fitur */
-    color: #000; /* Warna teks judul fitur */
-}
-
-.feature p {
-    font-size: 16px; /* Ukuran font deskripsi fitur */
-    color: #bbb; /* Warna teks deskripsi fitur */
 }
 
 /* Produk Terbaru */
@@ -2260,7 +2233,7 @@ button:hover {
 .contact-map p {
     font-size: 0.875rem;
     margin-bottom: 1rem;
-    color: #bbb;
+    color: #263238;
 }
 
 iframe {
